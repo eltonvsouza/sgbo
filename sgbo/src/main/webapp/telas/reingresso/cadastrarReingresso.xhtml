@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="../../template/template.xhtml">
+	<ui:define name="titulo">SGBO - CADASTRO DE REINGRESSO</ui:define>
+	<ui:define name="conteudo">
+		<h:form id="cadastro">
+			<rich:tabPanel>
+				<rich:tab label="Cadastro">
+					<rich:panel>
+						<f:facet name="header">
+                    		Cadastro de Reingresso
+               			</f:facet>
+						<h:panelGrid columns="2">
+							<h:outputText value="Número:" />
+							<h:inputText value="#{reingressoBean.reingresso.distribuicaoByNumero}" required="true" style=" width : 228px;"/>
+
+							<h:outputText value="Data do Reigresso:" />
+								<a4j:outputPanel id="dataReingresso" layout="block">
+									<rich:calendar value=""
+										id="calendarioDataReingresso" datePattern="dd/MM/yyyy" required="true" />
+								</a4j:outputPanel>
+							
+							<h:outputText value="Hora do Reingresso:" />
+							<h:inputText  value="#{reingressoBean.reingresso.horaReingresso}" required="true" />
+							
+							<h:outputText value="Receptor que Recusou:" />
+							<h:inputSecret  value="#{reingressoBean.reingresso.distribuicaoByNomeRecusou}" required="true" />
+							
+							<h:outputText value="RGCT do Receptor que Recusou:" />
+							<h:inputSecret value="#{reingressoBean.reingresso.distribuicaoByRgctRecusou}" required="true" />
+							
+							<h:outputText value="Medico que Devolveu:" />
+							<h:inputSecret  value="#{reingressoBean.reingresso.distribuicaoByMedicoDevolveu}" required="true" />
+							
+							<h:outputText value="Motivo da Devolução:" />
+							<h:inputSecret  value="#{reingressoBean.reingresso.motivoDevolucao}" required="true" />
+							
+							<h:outputText value="Data da Reavaliação:" />
+								<a4j:outputPanel id="dataReavaliacao" layout="block">
+									<rich:calendar value=""
+										id="calendarioDataReavaliacao" datePattern="dd/MM/yyyy" required="true" />
+								</a4j:outputPanel>
+							
+							<h:outputText value="Hora da Reavaliação:" />
+							<h:inputSecret  value="#{reingressoBean.reingresso.horaReavaliacao}" required="true" />
+							
+							<h:outputText value="Resultado da Reavaliação:" />
+							<h:inputSecret  value="#{reingressoBean.reingresso.resultadoReavaliacao}" required="true" />
+							
+							<h:outputText value="Destino do Tecido:" />
+							<h:inputSecret  value="#{reingressoBean.reingresso.destinoTecido}" required="true" />
+							
+							<h:commandButton action="#{reingressoBean.cadastrar}" value="Cadastrar" />
+						</h:panelGrid>
+					</rich:panel>
+				</rich:tab>
+			</rich:tabPanel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

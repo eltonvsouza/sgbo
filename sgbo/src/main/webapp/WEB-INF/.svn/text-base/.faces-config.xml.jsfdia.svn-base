@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#telas#index.xhtml" PATH="/telas/index.xhtml"
+  SHAPE="264,200,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#index.xhtml:0" NAME="item"
+   PATH="/telas/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastrarUsuario::#telas#usuario#cadastrarUsuario.xhtml"
+    NAME="output" PATH="/telas/usuario/cadastrarUsuario.xhtml"
+    TARGET="rules:#telas#usuario#cadastrarUsuario.xhtml"
+    TITLE="cadastrarUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listarUsuario::#telas#usuario#listarUsuario.xhtml"
+    NAME="output1" PATH="/telas/usuario/listarUsuario.xhtml"
+    TARGET="rules:#telas#usuario#listarUsuario.xhtml"
+    TITLE="listarUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastrarCausaMorte::#telas#causaMorte#cadastrarCausaMorte.xhtml"
+    NAME="output2" PATH="/telas/causaMorte/cadastrarCausaMorte.xhtml"
+    TARGET="rules:#telas#causaMorte#cadastrarCausaMorte.xhtml"
+    TITLE="cadastrarCausaMorte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listarCausaMorte::#telas#causaMorte#listarCausaMorte.xhtml"
+    NAME="output3" PATH="/telas/causaMorte/listarCausaMorte.xhtml"
+    TARGET="rules:#telas#causaMorte#listarCausaMorte.xhtml"
+    TITLE="listarCausaMorte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastrarEstabelecimento::#telas#estabelecimento#cadastrarEstabelecimento.xhtml"
+    NAME="output4"
+    PATH="/telas/estabelecimento/cadastrarEstabelecimento.xhtml"
+    TARGET="rules:#telas#estabelecimento#cadastrarEstabelecimento.xhtml"
+    TITLE="cadastrarEstabelecimento" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listarEstabelecimento::#telas#estabelecimento#listarEstabelecimento.xhtml"
+    NAME="output5"
+    PATH="/telas/estabelecimento/listarEstabelecimento.xhtml"
+    TARGET="rules:#telas#estabelecimento#listarEstabelecimento.xhtml"
+    TITLE="listarEstabelecimento" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastrarMedico::#telas#medico#cadastrarMedico.xhtml"
+    NAME="output6" PATH="/telas/medico/cadastrarMedico.xhtml"
+    TARGET="rules:#telas#medico#cadastrarMedico.xhtml"
+    TITLE="cadastrarMedico" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listarMedico::#telas#medico#listarMedico.xhtml" NAME="output7"
+    PATH="/telas/medico/listarMedico.xhtml"
+    TARGET="rules:#telas#medico#listarMedico.xhtml" TITLE="listarMedico" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastrarRegistro::#telas#registro#cadastrarRegistro.xhtml"
+    NAME="output8" PATH="/telas/registro/cadastrarRegistro.xhtml"
+    TARGET="rules:#telas#registro#cadastrarRegistro.xhtml"
+    TITLE="cadastrarRegistro" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listarRegistro::#telas#registro#listarRegistro.xhtml"
+    NAME="output9" PATH="/telas/registro/listarRegistro.xhtml"
+    TARGET="rules:#telas#registro#listarRegistro.xhtml"
+    TITLE="listarRegistro" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#usuario#cadastrarUsuario.xhtml"
+  PATH="/telas/usuario/cadastrarUsuario.xhtml" SHAPE="472,216,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#usuario#cadastrarUsuario.xhtml:0"
+   NAME="item" PATH="/telas/usuario/cadastrarUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="usuarioSalvo::#telas#index.xhtml"
+    NAME="output" PATH="/telas/index.xhtml"
+    SHAPE="521,248,528,248,528,320,248,320,248,208,263,208"
+    TARGET="rules:#telas#index.xhtml" TITLE="usuarioSalvo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="erroAoSalvar::#telas#usuario#cadastrarUsuario.xhtml"
+    NAME="output1" PATH="/telas/usuario/cadastrarUsuario.xhtml"
+    TARGET="rules:#telas#usuario#cadastrarUsuario.xhtml"
+    TITLE="erroAoSalvar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#usuario#listarUsuario.xhtml"
+  PATH="/telas/usuario/listarUsuario.xhtml" SHAPE="464,273,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#usuario#listarUsuario.xhtml:0"
+   NAME="item" PATH="/telas/usuario/listarUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="alterarUsuario::#telas#usuario#alterarUsuario.xhtml"
+    NAME="output" PATH="/telas/usuario/alterarUsuario.xhtml"
+    TARGET="rules:#telas#usuario#alterarUsuario.xhtml"
+    TITLE="alterarUsuario" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#usuario#alterarUsuario.xhtml"
+  PATH="/telas/usuario/alterarUsuario.xhtml" SHAPE="672,289,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#usuario#alterarUsuario.xhtml:0"
+   NAME="item" PATH="/telas/usuario/alterarUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="usuarioAlterado::#telas#usuario#listarUsuario.xhtml"
+    NAME="output" PATH="/telas/usuario/listarUsuario.xhtml"
+    TARGET="rules:#telas#usuario#listarUsuario.xhtml"
+    TITLE="usuarioAlterado" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#causaMorte#cadastrarCausaMorte.xhtml"
+  PATH="/telas/causaMorte/cadastrarCausaMorte.xhtml"
+  SHAPE="624,216,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#causaMorte#cadastrarCausaMorte.xhtml:0"
+   NAME="item" PATH="/telas/causaMorte/cadastrarCausaMorte.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="causaMorteSalva::#telas#index.xhtml"
+    NAME="output" PATH="/telas/index.xhtml"
+    TARGET="rules:#telas#index.xhtml" TITLE="causaMorteSalva" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#causaMorte#listarCausaMorte.xhtml"
+  PATH="/telas/causaMorte/listarCausaMorte.xhtml" SHAPE="304,240,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#causaMorte#listarCausaMorte.xhtml:0"
+   NAME="item" PATH="/telas/causaMorte/listarCausaMorte.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="alterarCausaMorte::#telas#causaMorte#alterarCausaMorte.xhtml"
+    NAME="output" PATH="/telas/causaMorte/alterarCausaMorte.xhtml"
+    TARGET="rules:#telas#causaMorte#alterarCausaMorte.xhtml"
+    TITLE="alterarCausaMorte" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#causaMorte#alterarCausaMorte.xhtml"
+  PATH="/telas/causaMorte/alterarCausaMorte.xhtml" SHAPE="448,304,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#causaMorte#alterarCausaMorte.xhtml:0"
+   NAME="item" PATH="/telas/causaMorte/alterarCausaMorte.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="causaMorteAlterada::#telas#causaMorte#listarCausaMorte.xhtml"
+    NAME="output" PATH="/telas/causaMorte/listarCausaMorte.xhtml"
+    TARGET="rules:#telas#causaMorte#listarCausaMorte.xhtml"
+    TITLE="causaMorteAlterada" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#telas#estabelecimento#cadastrarEstabelecimento.xhtml"
+  PATH="/telas/estabelecimento/cadastrarEstabelecimento.xhtml"
+  SHAPE="528,289,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#telas#estabelecimento#cadastrarEstabelecimento.xhtml:0"
+   NAME="item"
+   PATH="/telas/estabelecimento/cadastrarEstabelecimento.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="estabelecimentoSalvo::#telas#index.xhtml"
+    NAME="output" PATH="/telas/index.xhtml"
+    TARGET="rules:#telas#index.xhtml" TITLE="estabelecimentoSalvo" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#telas#estabelecimento#listarEstabelecimento.xhtml"
+  PATH="/telas/estabelecimento/listarEstabelecimento.xhtml"
+  SHAPE="528,513,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#telas#estabelecimento#listarEstabelecimento.xhtml:0"
+   NAME="item" PATH="/telas/estabelecimento/listarEstabelecimento.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="alterarEstabelecimento::#telas#estabelecimento#alterarEstabelecimento.xhtml"
+    NAME="output"
+    PATH="/telas/estabelecimento/alterarEstabelecimento.xhtml"
+    TARGET="rules:#telas#estabelecimento#alterarEstabelecimento.xhtml"
+    TITLE="alterarEstabelecimento" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#telas#estabelecimento#alterarEstabelecimento.xhtml"
+  PATH="/telas/estabelecimento/alterarEstabelecimento.xhtml"
+  SHAPE="272,641,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#telas#estabelecimento#alterarEstabelecimento.xhtml:0"
+   NAME="item"
+   PATH="/telas/estabelecimento/alterarEstabelecimento.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="estabelecimentoAlterado::#telas#estabelecimento#listarEstabelecimento.xhtml"
+    NAME="output"
+    PATH="/telas/estabelecimento/listarEstabelecimento.xhtml"
+    TARGET="rules:#telas#estabelecimento#listarEstabelecimento.xhtml"
+    TITLE="estabelecimentoAlterado" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#medico#listarMedico.xhtml"
+  PATH="/telas/medico/listarMedico.xhtml" SHAPE="560,609,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#medico#listarMedico.xhtml:0"
+   NAME="item" PATH="/telas/medico/listarMedico.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="alterarMedico::#telas#medico#alterarMedico.xhtml" NAME="output"
+    PATH="/telas/medico/alterarMedico.xhtml"
+    TARGET="rules:#telas#medico#alterarMedico.xhtml"
+    TITLE="alterarMedico" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#medico#cadastrarMedico.xhtml"
+  PATH="/telas/medico/cadastrarMedico.xhtml" SHAPE="560,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#medico#cadastrarMedico.xhtml:0"
+   NAME="item" PATH="/telas/medico/cadastrarMedico.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="medicoSalvo::#telas#index.xhtml"
+    NAME="output" PATH="/telas/index.xhtml"
+    TARGET="rules:#telas#index.xhtml" TITLE="medicoSalvo" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#medico#alterarMedico.xhtml"
+  PATH="/telas/medico/alterarMedico.xhtml" SHAPE="288,593,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#medico#alterarMedico.xhtml:0"
+   NAME="item" PATH="/telas/medico/alterarMedico.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="medicoAlterado::#telas#medico#listarMedico.xhtml" NAME="output"
+    PATH="/telas/medico/listarMedico.xhtml"
+    TARGET="rules:#telas#medico#listarMedico.xhtml"
+    TITLE="medicoAlterado" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#registro#cadastrarRegistro.xhtml"
+  PATH="/telas/registro/cadastrarRegistro.xhtml" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#registro#cadastrarRegistro.xhtml:0"
+   NAME="item" PATH="/telas/registro/cadastrarRegistro.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="registroSalvo::#telas#index.xhtml"
+    NAME="output" PATH="/telas/index.xhtml"
+    TARGET="rules:#telas#index.xhtml" TITLE="registroSalvo" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#registro#listarRegistro.xhtml"
+  PATH="/telas/registro/listarRegistro.xhtml" SHAPE="576,641,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#registro#listarRegistro.xhtml:0"
+   NAME="item" PATH="/telas/registro/listarRegistro.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="alterarRegistro::#telas#registro#alterarRegistro.xhtml"
+    NAME="output" PATH="/telas/registro/alterarRegistro.xhtml"
+    TARGET="rules:#telas#registro#alterarRegistro.xhtml"
+    TITLE="alterarRegistro" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#telas#registro#alterarRegistro.xhtml"
+  PATH="/telas/registro/alterarRegistro.xhtml" SHAPE="304,657,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#telas#registro#alterarRegistro.xhtml:0"
+   NAME="item" PATH="/telas/registro/alterarRegistro.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="registroAlterado::#telas#registro#listarRegistro.xhtml"
+    NAME="output" PATH="/telas/registro/listarRegistro.xhtml"
+    TARGET="rules:#telas#registro#listarRegistro.xhtml"
+    TITLE="registroAlterado" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

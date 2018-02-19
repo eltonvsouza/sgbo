@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="../../template/template.xhtml">
+	<ui:define name="titulo">SGBO - LISTA DE REGISTROS</ui:define>
+	<ui:define name="conteudo">
+		<rich:panel>
+			<f:facet name="header">
+						Listagem de Registros
+					</f:facet>
+			<h:panelGrid columns="1" align="center">
+				<h:form id="lista_registro">
+					<h:column>
+						<rich:datascroller for="listarRegistro" />
+					</h:column>
+					<br />
+					<rich:dataTable id="listarRegistro" align="center"
+						value="#{registroBean.registros}" var="registro"
+						onRowMouseOver="this.style.backgroundColor='#F8F8F8'"
+						onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+						rowClasses="cur">
+						<rich:column>
+							<f:facet name="header">Número</f:facet>
+							<h:outputText value="#{registro.numero}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Nome do Doador</f:facet>
+							<h:outputText value="#{registro.nomeDoador}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Causa da Morte do Doador</f:facet>
+							<h:outputText value="#{registro.causaMorteDoador}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Data Óbito</f:facet>
+							<h:outputText value="#{registro.dataObito}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Sorologia</f:facet>
+							<h:outputText value="#{registro.sorologia}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Preservada</f:facet>
+							<h:outputText value="#{registro.preservada}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Validade</f:facet>
+							<h:outputText value="#{registro.validade}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Alterar</f:facet>
+							<h:commandLink value="Alterar"
+								action="#{registroBean.carregarAlterar}">
+								<f:setPropertyActionListener value="#{registro.idRegistro}"
+									target="#{registroBean.idBusca}" />
+							</h:commandLink>
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Excluir</f:facet>
+							<h:commandLink value="Excluir" action="#{registroBean.excluir}">
+								<f:setPropertyActionListener value="#{registro.idRegistro}"
+									target="#{registroBean.idBusca}" />
+							</h:commandLink>
+						</rich:column>
+					</rich:dataTable>
+					<center>
+							<h:commandLink target="_blank" id="versaoPdf" value="Versão em Pdf" action="#{registroBean.relatorioGeral}"/>
+					</center>
+				</h:form>
+
+			</h:panelGrid>
+		</rich:panel>
+	</ui:define>
+</ui:composition>
+</html>

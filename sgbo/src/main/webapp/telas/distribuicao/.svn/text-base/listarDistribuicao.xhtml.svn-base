@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="../../template/template.xhtml">
+	<ui:define name="titulo">SGBO - LISTA DE DISTRIBUIÇÕES</ui:define>
+	<ui:define name="conteudo">
+		<rich:panel>
+			<f:facet name="header">
+						Listagem de Distribuições
+					</f:facet>
+			<h:panelGrid columns="1" align="center">
+				<h:form id="lista_distribuicao">
+					<h:column>
+						<rich:datascroller for="listarDistribuicao" />
+					</h:column>
+					<br />
+					<rich:dataTable id="listarDistribuicao" align="center"
+						value="#{distribuicaoBean.distribuicoes}" var="distribuicao"
+						onRowMouseOver="this.style.backgroundColor='#F8F8F8'"
+						onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+						rowClasses="cur">
+						<rich:column breakBefore="true">
+							<f:facet name="header">Código</f:facet>
+							<f:param name="id" value="#{distribuicao.idDistribuicao}" />
+							<h:outputText value="#{distribuicaoBean.distribuicao.idDistribuicao}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Registro</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.registro}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Médico</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.medico}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Estabelecimento</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.estabelecimento}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Data da Liberacao</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.dataLiberacao}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Hora da Liberacao</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.horaLiberacao}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Data da Saída</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.dataSaida}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Hora da Saída</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.horaSaida}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Motivo da Saída</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.motivoSaida}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Nome do Receptor</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.nomeReceptor}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">RGCT</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.rgctReceptor}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Sexo</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.sexoReceptor}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Nome do Portador</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.nomePortador}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">RG do Portador</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.rgPortador}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Vínculo do Portador</f:facet>
+							<h:outputText value="#{distribuicaoBean.distribuicao.vinculoPortador}" />
+						</rich:column>
+						
+						<rich:column>
+							<f:facet name="header">Alterar</f:facet>
+							<h:commandLink value="Alterar" action="#{distribuicaoBean.carregarAlterar}">
+								<f:setPropertyActionListener value="#{distribuicao.idDistribuicao}" target="#{distribuicaoBean.idBusca}" />
+							</h:commandLink>
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Excluir</f:facet>
+							<h:commandLink value="Excluir" action="#{distribuicaoBean.excluir}">
+								<f:setPropertyActionListener value="#{distribuicao.idDistribuicao}" target="#{distribuicaoBean.idBusca}" />
+							</h:commandLink>
+						</rich:column>
+					</rich:dataTable>
+				</h:form>
+
+			</h:panelGrid>
+		</rich:panel>
+	</ui:define>
+</ui:composition>
+</html>

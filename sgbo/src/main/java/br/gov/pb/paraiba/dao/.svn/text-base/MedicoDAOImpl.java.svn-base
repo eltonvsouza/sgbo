@@ -1,0 +1,35 @@
+package br.gov.pb.paraiba.dao;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import br.gov.pb.paraiba.dao.utility.HibernateUtility;
+import br.gov.pb.paraiba.model.Medico;
+
+public class MedicoDAOImpl<T> extends GenericDAOImpl<T> implements MedicoDAO {
+
+	public Medico verificarMedicoCadastrado(String crm, String endereco, String especialidade, String nome, String telefone) {
+		Session session = HibernateUtility.getSession();
+		Transaction tx = session.beginTransaction();
+		Medico m = null;
+		try {
+			Query select = session
+					.createQuery("SELECT m FROM Medico m WHERE m.crm = :crm AND m.distribuicoes = :distribuicoes AND m.endereco = :endereco AND m.especialidade = :especialidade AND m.nome = :nome AND m.telefone = :telefone ");
+			select.setParameter("crm", crm);
+			select.setParameter("endereco", endereco);
+			select.setParameter("especialidade", especialidade);
+			select.setParameter("nome", nome);
+			select.setParameter("telefone", telefone);
+			
+			m = (Medico) select.uniqueResult();
+		} catch (HibernateException he) {
+			he.printStackTrace();
+		} finally {
+			session.close();
+			System.gc();
+		}
+		return m;
+	}
+}

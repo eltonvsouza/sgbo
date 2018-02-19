@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="./template/templateLogin.xhtml">
+	<ui:define name="titulo">SGBO - LOGIN</ui:define>
+	<ui:define name="conteudo">
+<center>
+		<h:panelGrid rowClasses="s1row" columns="3"
+			columnClasses="wfcol1,wfcol2,wfcol3">
+
+			<h:outputText value="Login:" />
+			<h:inputText id="login" value="" label="Login" required="true" />
+			<rich:message for="login" />
+
+			<h:outputText value="Senha:" />
+			<h:inputSecret id="senha" value="" label="Senha" required="true" />
+			<rich:message for="senha" />
+
+		<center>
+			<a4j:commandButton style="float:right" action="logar"
+				value="ENTRAR" />
+		</center>
+		</h:panelGrid> 
+</center>	
+	</ui:define>
+</ui:composition>
+</html>

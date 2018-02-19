@@ -1,0 +1,67 @@
+package br.gov.pb.paraiba.model;
+
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import static javax.persistence.GenerationType.IDENTITY;
+
+@Entity
+@Table(name = "causamorte", catalog = "sgbo")
+public class CausaMorte {
+
+
+		private Integer idCausaMorte;
+		private String descricao;
+		private Set<Registro> registros = new HashSet<Registro>(0);
+
+		public CausaMorte() {
+		}
+
+		public CausaMorte(String descricao) {
+			this.descricao = descricao;
+		}
+
+		public CausaMorte(String descricao, Set<Registro> registros) {
+			this.descricao = descricao;
+			this.registros = registros;
+		}
+
+		@Id
+		@GeneratedValue(strategy = IDENTITY)
+		@Column(name = "idcausaMorte", unique = true, nullable = false)
+		public Integer getIdCausaMorte() {
+			return this.idCausaMorte;
+		}
+
+		public void setIdCausaMorte(Integer idCausaMorte) {
+			this.idCausaMorte = idCausaMorte;
+		}
+
+		@Column(name = "descricao", nullable = false, length = 50)
+		public String getDescricao() {
+			return this.descricao;
+		}
+
+<<<<<<< .mine
+		public void setDescricao(String descricao) {
+			this.descricao = descricao;
+		}
+
+		@OneToMany(fetch = FetchType.LAZY, mappedBy = "causamorte")
+		public Set<Registro> getRegistros() {
+			return this.registros;
+		}
+
+=======
+>>>>>>> .r23
+		public void setRegistros(Set<Registro> registros) {
+			this.registros = registros;
+		}
+
+}

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/17/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao
+END
+GenericDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/3/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/GenericDAO.java
+END
+ReingressoDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/24/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/ReingressoDAO.java
+END
+RegistroDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/24/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/RegistroDAOImpl.java
+END
+DistribuicaoDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/24/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/DistribuicaoDAO.java
+END
+MedicoDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/MedicoDAOImpl.java
+END
+EstabelecimentoDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/EstabelecimentoDAOImpl.java
+END
+CausaMorteDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/6/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/CausaMorteDAOImpl.java
+END
+UsuarioDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/24/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/UsuarioDAO.java
+END
+RegistroDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/24/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/RegistroDAO.java
+END
+GenericDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/17/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/GenericDAOImpl.java
+END
+MedicoDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/MedicoDAO.java
+END
+ReingressoDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/24/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/ReingressoDAOImpl.java
+END
+DistribuicaoDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/24/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/DistribuicaoDAOImpl.java
+END
+EstabelecimentoDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/EstabelecimentoDAO.java
+END
+CausaMorteDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/6/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/CausaMorteDAO.java
+END
+UsuarioDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/dao/UsuarioDAOImpl.java
+END

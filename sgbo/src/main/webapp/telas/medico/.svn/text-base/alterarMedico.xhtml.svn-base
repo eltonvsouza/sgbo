@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="../../template/template.xhtml">
+	<ui:define name="titulo">SGBO - CADASTRO DE MÉDICO</ui:define>
+	<ui:define name="conteudo">
+		<h:form id="cadastro">
+			<rich:tabPanel>
+				<rich:tab label="Cadastro">
+					<rich:panel>
+						<h:panelGrid columns="2">
+							<h:outputText value="Nome:" />
+							<h:inputText value="#{MedicoBean.medico.nome}" rendered="true" style=" width : 228px;"/>
+							<h:outputText value="Endereço:" />
+							<h:inputText value="#{MedicoBean.medico.endereco}" rendered="true" style=" width : 228px;"/>
+							<h:outputText value="Telefone:" />
+							<h:inputText value="#{MedicoBean.medico.telefone}" rendered="true" style=" width : 228px;"/>
+							<h:outputText value="CRM:" />
+							<h:inputText value="#{MedicoBean.medico.crm}" rendered="true" style=" width : 228px;"/>
+							<h:outputText value="Especialidade:" />
+							<h:inputText value="#{MedicoBean.medico.especialidade}" rendered="true" style=" width : 228px;"/>
+							
+							<h:commandButton action="#{MedicoBean.alterar}" value="Alterar" />
+						</h:panelGrid>
+					</rich:panel>
+				</rich:tab>
+			</rich:tabPanel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

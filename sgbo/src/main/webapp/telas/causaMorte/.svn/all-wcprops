@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/webapp/telas/causaMorte
+END
+cadastrarCausaMorte.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/webapp/telas/causaMorte/cadastrarCausaMorte.xhtml
+END
+alterarCausaMorte.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/8/trunk/sgbo/sgbo/src/main/webapp/telas/causaMorte/alterarCausaMorte.xhtml
+END
+listarCausaMorte.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/8/trunk/sgbo/sgbo/src/main/webapp/telas/causaMorte/listarCausaMorte.xhtml
+END

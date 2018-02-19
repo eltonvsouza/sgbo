@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/28/trunk/sgbo/sgbo
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/sgbo/sgbo/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/3/trunk/sgbo/sgbo/.project
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/31/trunk/sgbo/sgbo/pom.xml
+END

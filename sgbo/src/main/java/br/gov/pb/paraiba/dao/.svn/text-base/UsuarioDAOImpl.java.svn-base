@@ -1,0 +1,32 @@
+package br.gov.pb.paraiba.dao;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import br.gov.pb.paraiba.dao.utility.HibernateUtility;
+import br.gov.pb.paraiba.model.Usuario;
+
+public class UsuarioDAOImpl<T> extends GenericDAOImpl<T> implements UsuarioDAO {
+
+	public Usuario verificarUsuarioCadastrado(String nome, String login) {
+		Session session = HibernateUtility.getSession();
+		Transaction tx = session.beginTransaction();
+		Usuario user = null;
+		try {
+			Query select = session
+					.createQuery("SELECT u FROM Usuario u WHERE u.nome = :nome AND u.login = :login");
+			select.setParameter("nome", nome);
+			select.setParameter("login", login);
+			user = (Usuario) select.uniqueResult();
+		} catch (HibernateException he) {
+			he.printStackTrace();
+		} finally {
+			session.close();
+			System.gc();
+		}
+		return user;
+	}
+
+}

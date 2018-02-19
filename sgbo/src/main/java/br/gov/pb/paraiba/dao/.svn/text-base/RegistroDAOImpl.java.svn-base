@@ -1,0 +1,6 @@
+package br.gov.pb.paraiba.dao;
+
+
+public class RegistroDAOImpl<T> extends GenericDAOImpl<T> implements RegistroDAO {
+
+}

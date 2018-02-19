@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="../../template/template.xhtml">
+	<ui:define name="titulo">SGBO - LISTA DE REINGRESSO</ui:define>
+	<ui:define name="conteudo">
+		<rich:panel>
+			<f:facet name="header">
+						Listagem de Reingressos
+					</f:facet>
+			<h:panelGrid columns="1" align="center">
+				<h:form id="lista_usuario">
+					<h:column>
+						<rich:datascroller for="listarReingresso" />
+					</h:column>
+					<br />
+					<rich:dataTable id="listarReingresso" align="center"
+						value="#{reingressoBean.reingressos}" var="reingresso"
+						onRowMouseOver="this.style.backgroundColor='#F8F8F8'"
+						onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+						rowClasses="cur">
+						<rich:column breakBefore="true">
+							<f:facet name="header">Código</f:facet>
+							<f:param name="id" value="#{reingresso.idReingresso}" />
+							<h:outputText value="#{reingressoBean.reingresso.idReingresso}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Número</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.distribuicaoByNumero}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Data do Reingresso</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.dataReingresso}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Hora do Reingresso</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.horaReingresso}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Nome do Receptor que Recusou</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.distribuicaoByNomeRecusou}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">RGCT do Receptor que Recusou</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.distribuicaoByRgctRecusou}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Médico que Devolveu</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.distribuicaoByMedicoDevolveu}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Motivo da Devolução</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.motivoDevolucao}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Data da Reavaliação</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.dataReavaliacao}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Hora da Reavaliação</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.horaReavaliacao}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Resultado da reavaliação</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.resultadoReavaliacao}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Destino do Tecido</f:facet>
+							<h:outputText value="#{reingressoBean.reingresso.destinoTecido}" />
+						</rich:column>
+						
+						
+						<rich:column>
+							<f:facet name="header">Alterar</f:facet>
+							<h:commandLink value="Alterar" action="#{reingressoBean.carregarAlterar}">
+								<f:setPropertyActionListener value="#{reingresso.idReingresso}" target="#{reingressoBean.idBusca}" />
+							</h:commandLink>
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">Excluir</f:facet>
+							<h:commandLink value="Excluir" action="#{reingressoBean.excluir}">
+								<f:setPropertyActionListener value="#{reingresso.idReingresso}" target="#{reingressoBean.idBusca}" />
+							</h:commandLink>
+						</rich:column>
+					</rich:dataTable>
+				</h:form>
+
+			</h:panelGrid>
+		</rich:panel>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,168 @@
+package br.gov.pb.paraiba.report;
+
+import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperRunManager;
+import br.gov.pb.paraiba.dao.UsuarioDAOImpl;
+import br.gov.pb.paraiba.report.connection.Conexao;
+
+import com.mysql.jdbc.Connection;
+
+public class RelatorioUsuario {
+	private UsuarioDAOImpl usuarioDAOImpl;
+	private String saida;
+
+	public String getSaida() {
+		return saida;
+	}
+
+	public void setSaida(String saida) {
+		this.saida = saida;
+	}
+
+	public UsuarioDAOImpl getUsuarioDAOImpl() {
+		return usuarioDAOImpl;
+	}
+
+	public void setUsuarioDAOImpl(UsuarioDAOImpl usuarioDAOImpl) {
+		this.usuarioDAOImpl = usuarioDAOImpl;
+	}
+	
+//	private String getDiretorioReal(String diretorio) {
+//		HttpSession session = (HttpSession)
+//		FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+//		return session.getServletContext().getRealPath(diretorio);
+//	}
+//	
+//	private String getContextPath() {
+//		HttpSession session = (HttpSession)
+//		FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+//		return session.getServletContext().getContextPath();
+//	}
+
+	public void geraRelatorio() throws Exception {
+		Connection conexao = (Connection) new Conexao().getConexao();
+//		Statement stm = (Statement) conexao.createStatement( );
+//		String query = "select * from Livro";
+//		ResultSet rs = stm.executeQuery( query );
+//		
+//		/* implementação da interface JRDataSource para DataSource ResultSet */
+//		JRResultSetDataSource jrRS = new JRResultSetDataSource( rs );
+//		/* HashMap de parametros utilizados no relatório. Sempre instanciados */
+		Map parameters = new HashMap();
+//		// parameters.put("COLUNA", valor);
+////		JasperFillManager.fillReportToFile(jasper, null, conexao);
+//		/* Exporta para o formato PDF */
+////		JasperExportManager.exportReportToPdfFile( "BibliotecaPessoal.jrprint" );
+//		
+//		/* Preenche o relatorio e o salva diretamente em arquivo PDF. Sem
+//		a necessidade do .jrprint */
+//		 JasperRunManager.runReportToPdfFile("relatorioUsuario.jasper", parameters, jrRS);
+//		 /* Visualiza o relatório em formato PDF */
+//		 JasperViewer.viewReport( "relatorioUsuario.pdf", true );
+//		
+		try {
+			String jasper = "/br/gov/pb/paraiba/report/jasper/relatorioUsuario.jasper";			
+			JasperPrint print = JasperFillManager.fillReport(jasper, null, conexao);
+			 exibePdf(print);
+//			preenchePdf(print);
+		} catch (JRException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+//		}  catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+		} finally {
+			System.gc();
+		}
+	}
+	
+
+
+//	public List<Usuario> listaUsuarios() {
+//		List<Usuario> usuarios = new ArrayList<Usuario>();
+//		usuarioDAOImpl = new UsuarioDAOImpl();
+//		usuarios = usuarioDAOImpl.listar();
+//		return usuarios;
+//	}
+
+//	public ArrayList<Usuario> listaUsuarios() {
+//		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+//		usuarioDAOImpl = new UsuarioDAOImpl();
+//		usuarios = (ArrayList<Usuario>) usuarioDAOImpl.listar();
+//		return usuarios;
+//	}
+	
+//	private void preenchePdf(JasperPrint print) throws JRException {
+//		// Pego o caminho completo do PDF desde a raiz
+//		saida = getDiretorioReal("/pdf/relatorio.pdf");
+//		// Exporto para PDF
+//		JasperExportManager.exportReportToPdfFile(print, saida);
+//		/*
+//		* Jogo na variável saída o nome da aplicação mais o
+//		* caminho para o PDF. Essa variável será utilizada pela view
+//		*/
+//		saida = getContextPath() + "/pdf/relatorio.pdf";
+//	}
+	
+	public void pdf(ActionEvent event) throws Exception {  
+		Conexao conexao = null;  
+		try {  
+			conexao = (Conexao) conexao.getConexao();  
+			HttpServletResponse response = (HttpServletResponse)   
+			FacesContext.getCurrentInstance().getExternalContext().getResponse();  
+			ServletOutputStream servletOutputStream = response.getOutputStream();  
+			Map parameters = new HashMap();  
+			ServletContext sc = (ServletContext)  
+			FacesContext.getCurrentInstance().getExternalContext().getContext();  
+			String jasper = sc.getRealPath("/br/gov/pb/paraiba/report/jasper/relatorioUsuario.jasper");  
+			byte[] bytes = JasperRunManager.runReportToPdf(jasper, parameters, (java.sql.Connection) conexao);  
+			//aqui vc substitui pelo seu gerador de relatorios, ao seu modo  
+			response.setContentType("application/pdf");  
+			response.setHeader("Content-disposition", "filename=\"relatorioUsuario.pdf\""); //nome que vc quer dar ao arquivo  
+			response.setContentLength(bytes.length);  
+			//sem essas linhas abaixo não funciona, não roda da pau hehehe  
+			servletOutputStream.write(bytes, 0, bytes.length);  
+			servletOutputStream.flush();  
+			servletOutputStream.close();  
+			FacesContext.getCurrentInstance().renderResponse();  
+			FacesContext.getCurrentInstance().responseComplete();  
+		} catch (Exception e) {  
+			e.printStackTrace();  
+		} finally {  
+			conexao.fechaConexao();  
+		}  
+	}  
+	
+	private void exibePdf(JasperPrint print) throws JRException, IOException {
+		byte[] bytes = null; 
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		ServletContext servletContext = (ServletContext) facesContext
+				.getExternalContext().getContext();
+		HttpServletResponse response = (HttpServletResponse) FacesContext
+				.getCurrentInstance().getExternalContext().getResponse();
+
+		bytes = JasperExportManager.exportReportToPdf(print);
+		response.setContentType("application/pdf");
+		response.setContentLength(bytes.length);
+		ServletOutputStream servletOutputStream = response.getOutputStream();
+		servletOutputStream.write(bytes, 0, bytes.length);
+		servletOutputStream.flush();
+		servletOutputStream.close();
+		facesContext.responseComplete();
+	}
+}

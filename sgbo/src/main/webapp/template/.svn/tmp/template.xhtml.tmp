@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<head>
+<title><ui:insert name="titulo"></ui:insert></title>
+<meta http-equiv="Content-Language" content="English" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	media="screen" />
+</head>
+<body>
+
+<div id="wrap">
+
+<div id="header">
+<h1>S G B O</h1>
+<h2>SISTEMA GERENCIADOR DO BANCO DE OLHOS</h2>
+</div>
+
+<div id="top"></div>
+<div id="menu">
+	<ui:include src="../menu/menu.xhtml" />
+</div>
+
+<div id="content">
+<center>
+<<<<<<< .mine
+<body bgcolor="#FFFFFF" LEFTMARGIN="0" TOPMARGIN="0" MARGINWIDTH="0"
+	MARGINHEIGHT="0" ONLOAD="preloadImages();">
+<!-- ImageReady Slices (index.psd) -->
+<table width="770" border="0" cellpadding="0" cellspacing="0"
+	class="frame">
+	<ui:insert name="topo">
+		<tr>
+			<h1>SGBO - SISTEMA GERENCIADOR DO BANCO DE OLHOS DA PARAÍBA</h1>
+					<center><h3>BEM VINDO!</h3></center>
+			<td colspan="9"><img src="../images/down1.gif" width="908"
+				height="21" alt="" /></td>
+		</tr>
+	</ui:insert>
+	<tr>
+		<td><ui:include src="../menu/menu.xhtml" /></td>
+	</tr>
+	<tr>
+		<td>
+			<ui:insert name="conteudo">
+				<f:view></f:view>
+			</ui:insert>
+		</td>
+	</tr>
+	<tr>
+		<ui:insert name="rodape">
+			<td colspan="9"><img src="../images/down1.gif" width="908"
+				height="21" alt="" /></td>
+		</ui:insert>
+	</tr>
+</table>
+<!-- End ImageReady Slices -->
+=======
+<ui:insert name="conteudo">
+	conteudo...
+</ui:insert>
+</center>	
+</div>
+
+<div id="bottom"></div>
+<div id="footer"></div>
+</div>
+
+>>>>>>> .r4
+</body>
+</html>

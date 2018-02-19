@@ -1,0 +1,32 @@
+package br.gov.pb.paraiba.dao;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import br.gov.pb.paraiba.dao.utility.HibernateUtility;
+import br.gov.pb.paraiba.model.Distribuicao;
+import br.gov.pb.paraiba.model.Registro;
+
+public class DistribuicaoDAOImpl<T> extends GenericDAOImpl<T> implements DistribuicaoDAO{
+
+	public Distribuicao verificarDistribuicaoCadastrado(Registro registro) {
+		Session session = HibernateUtility.getSession();
+		Transaction tx = session.beginTransaction();
+		Distribuicao d = null;
+		try {
+			Query select = session
+					.createQuery("SELECT d FROM Distribuicao  WHERE d.registro = :registro");
+			select.setParameter("registro", registro);
+			d = (Distribuicao) select.uniqueResult();
+		} catch (HibernateException he) {
+			he.printStackTrace();
+		} finally {
+			session.close();
+			System.gc();
+		}
+		return d;
+	}
+
+}

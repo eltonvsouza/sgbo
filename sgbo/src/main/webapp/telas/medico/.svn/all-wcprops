@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/webapp/telas/medico
+END
+cadastrarMedico.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/webapp/telas/medico/cadastrarMedico.xhtml
+END
+alterarMedico.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/webapp/telas/medico/alterarMedico.xhtml
+END
+listarMedico.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/webapp/telas/medico/listarMedico.xhtml
+END

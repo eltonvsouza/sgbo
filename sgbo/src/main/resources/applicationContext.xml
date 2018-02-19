@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+	default-autowire="byName">
+	
+	<!-- DECLARAÇÃO DOS DAOS -->
+	<bean id="usuarioDAOImpl" class="br.gov.pb.paraiba.dao.UsuarioDAOImpl" />
+	<bean id="causaMorteDAOImpl" class="br.gov.pb.paraiba.dao.CausaMorteDAOImpl"/>
+	<bean id="estabelecimentoDAOImpl" class="br.gov.pb.paraiba.dao.EstabelecimentoDAOImpl" />
+	<bean id="medicoDAOImpl" class="br.gov.pb.paraiba.dao.MedicoDAOImpl" />
+	<bean id="registroDAOImpl" class="br.gov.pb.paraiba.dao.RegistroDAOImpl" />
+	<bean id="distribuicaoDAOImpl" class="br.gov.pb.paraiba.dao.DistribuicaoDAOImpl" />
+	<bean id="reingressoDAOImpl" class="br.gov.pb.paraiba.dao.ReingressoDAOImpl"  />
+	
+	<!-- DECLARAÇÃO DOS MANAGED BEANS -->
+	<bean id="usuarioBean" class="br.gov.pb.paraiba.bean.UsuarioBean"	scope="session">
+		<property name="usuarioDAOImpl" ref="usuarioDAOImpl" />
+	</bean>
+	<bean id="causaMorteBean" class="br.gov.pb.paraiba.bean.CausaMorteBean"	scope="session">
+		<property name="causaMorteDAOImpl" ref="causaMorteDAOImpl" />
+	</bean>
+	<bean id="estabelecimentoBean" class="br.gov.pb.paraiba.bean.EstabelecimentoBean"	scope="session">
+		<property name="estabelecimentoDAOImpl" ref="estabelecimentoDAOImpl" />
+	</bean>
+	<bean id="medicoBean" class="br.gov.pb.paraiba.bean.MedicoBean"	scope="session">
+		<property name="medicoDAOImpl" ref="medicoDAOImpl" />
+	</bean>
+	<bean id="registroBean" class="br.gov.pb.paraiba.bean.RegistroBean"	scope="session">
+		<property name="registroDAOImpl" ref="registroDAOImpl" />
+	</bean>
+	<bean id="distribuicaoBean" class="br.gov.pb.paraiba.bean.DistribuicaoBean"	scope="session">
+		<property name="distribuicaoDAOImpl" ref="distribuicaoDAOImpl" />
+	</bean>	
+	<bean id="reingressoBean" class="br.gov.pb.paraiba.bean.ReingressoBean"	scope="session">
+		<property name="reingressoDAOImpl" ref="reingressoDAOImpl" />
+	</bean>	
+	
+	<bean id="conveterGenerico" scope="prototype"
+		class="br.gov.pb.paraiba.model.ConveterGenerico" />
+	
+	
+	
+	
+<!--	  Transações POG no mesmo appContext -->
+<!--	<bean id="txInterceptor"-->
+<!--		class="org.springframework.transaction.interceptor.TransactionInterceptor">-->
+<!--		<property name="transactionManager" ref="transactionManager" />-->
+<!--		<property name="transactionAttributeSource"-->
+<!--			ref="transactionAttributeSource" />-->
+<!--	</bean>-->
+<!---->
+<!--	<bean id="transactionAttributeSource"-->
+<!--		class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">-->
+<!--		<property name="properties">-->
+<!--			<value>-->
+<!--				salvar*=PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED-->
+<!--				salvarOuAtualizar*=PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED-->
+<!--				excluir*=PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED-->
+<!--				*=readOnly-->
+<!--			</value>-->
+<!--		</property>-->
+<!--	</bean>-->
+<!---->
+<!--	<bean id="autoProxyCreator"-->
+<!--		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">-->
+<!--		<property name="interceptorNames">-->
+<!--			<value>txInterceptor</value>-->
+<!--		</property>-->
+<!--		<property name="beanNames">-->
+<!--			<value>*DAO</value>-->
+<!--		</property>-->
+<!--	</bean>-->
+<!---->
+<!--	<bean id="transactionManager"-->
+<!--		class="org.springframework.orm.hibernate3.HibernateTransactionManager">-->
+<!--		<property name="sessionFactory" ref="sessionFactory" />-->
+<!--	</bean>-->
+<!--	-->
+<!--	##################    ACESSO A FONTE DE DADOS   #####################-->
+<!---->
+<!--	<bean id="sessionFactory" name="sessionFactory"-->
+<!--		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">-->
+<!--		<property name="configLocation"-->
+<!--			value="${hibernate.config.location}" />-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+<!--	   <property name="properties">-->
+<!--	      <value>		   	       -->
+<!--	         hibernate.config.location=classpath:hibernate.cfg.xml-->
+<!---->
+<!--	       </value>-->
+<!--	   </property>-->
+<!--	</bean>-->
+	
+
+	
+</beans>

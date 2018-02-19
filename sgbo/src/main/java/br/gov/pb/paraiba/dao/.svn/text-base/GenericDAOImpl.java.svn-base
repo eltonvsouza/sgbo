@@ -1,0 +1,119 @@
+package br.gov.pb.paraiba.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.NonUniqueObjectException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import br.gov.pb.paraiba.dao.utility.HibernateUtility;
+
+public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
+	
+	private SessionFactory sessionFactory;
+	
+	public void salvar(T object) {
+		Serializable retorno = null;
+
+		Session session = getSession();
+
+		session.save(object);
+
+		// Retira o objeto da sessão
+		session.flush();
+		session.evict(object);
+		
+	}
+	
+	
+	public List<T> listar() {
+		Session session = getSession();		
+		List<T> objects = null;
+		try {
+			Query select = session.createQuery("Select o from Usuario o");
+			objects = select.list();
+		} catch (HibernateException he) {
+			he.printStackTrace();
+		} finally {
+			session.close();
+			System.gc();
+		}
+		return objects;
+	}
+	
+	public T carregar(Integer id) {
+		Session session = HibernateUtility.getSession();
+		Transaction tx = session.beginTransaction();
+		Object object = null;
+		try {
+			Query select = session
+					.createQuery("SELECT u FROM Usuario u WHERE u.id = :id");
+			select.setParameter("id", id);
+			object = select.uniqueResult();
+		} catch (HibernateException he) {
+			he.printStackTrace();
+		} finally {
+			session.close();
+			System.gc();
+		}
+		return (T) object;
+	}
+	
+	public void salvarOuAtualizar(T object) {
+
+		Session session = getSession();
+		try {
+			session.update(object);
+		} catch (NonUniqueObjectException e) {
+			session.merge(object);
+		}
+
+		// Envia as alterações do objeto para o banco e retira o objeto da
+		// sessão.
+		session.flush();
+		session.evict(object);
+
+	}
+	
+	public void excluir(T object) {
+		Session session = getSession();
+		Transaction tx = session.beginTransaction();
+		try {
+			session.delete(object);
+			tx.commit();
+		} catch (HibernateException he) {
+			he.printStackTrace();
+		} finally {
+			session.close();
+			System.gc();
+		}
+		
+	}
+	
+	/**
+	 * Retorna a sessão corrente.
+	 * @return Retorna a sessão corrente.
+	 */
+	protected Session getSession() {
+		return getSessionFactory().getCurrentSession();
+	}
+
+	/**
+	 * @return a propriedade sessionFactory
+	 */
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+	
+	/**
+	 * @param sessionFactory sessionFactory a ser atribuído
+	 */
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+}

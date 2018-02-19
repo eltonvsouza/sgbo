@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+	<!-- NAVEGAÇÃO PARA PÁGINA INDEX -->
+	
+	<!-- NAVEGAÇÃO PARA USUÁRIO -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>cadastrarUsuario</from-outcome>
+			<to-view-id>/telas/usuario/cadastrarUsuario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>listarUsuario</from-outcome>
+			<to-view-id>/telas/usuario/listarUsuario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>alterarUsuario</from-outcome>
+			<to-view-id>/telas/usuario/alterarUsuario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>exibeRelatorio</from-outcome>
+			<to-view-id>/telas/usuario/relatorioUsuario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- NAVEGAÇÃO PARA CAUSA MORTE -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>cadastrarCausaMorte</from-outcome>
+			<to-view-id>/telas/causaMorte/cadastrarCausaMorte.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>listarCausaMorte</from-outcome>
+			<to-view-id>/telas/causaMorte/listarCausaMorte.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>alterarCausaMorte</from-outcome>
+			<to-view-id>/telas/causaMorte/alterarCausaMorte.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- NAVEGAÇÃO PARA ESTABELECIMENTO -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>cadastrarEstabelecimento</from-outcome>
+			<to-view-id>/telas/estabelecimento/cadastrarEstabelecimento.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>listarEstabelecimento</from-outcome>
+			<to-view-id>/telas/estabelecimento/listarEstabelecimento.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>alterarEstabelecimento</from-outcome>
+			<to-view-id>/telas/estabelecimento/alterarEstabelecimento.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- NAVEGAÇÃO PARA MÉDICO -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>cadastrarMedico</from-outcome>
+			<to-view-id>/telas/medico/cadastrarMedico.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>listarMedico</from-outcome>
+			<to-view-id>/telas/medico/listarMedico.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>alterarMedico</from-outcome>
+			<to-view-id>/telas/medico/alterarMedico.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- NAVEGAÇÃO PARA REGISTRO -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>cadastrarRegistro</from-outcome>
+			<to-view-id>/telas/registro/cadastrarRegistro.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>listarRegistro</from-outcome>
+			<to-view-id>/telas/registro/listarRegistro.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>alterarRegistro</from-outcome>
+			<to-view-id>/telas/registro/alterarRegistro.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- NAVEGAÇÃO PARA DISTRIBUICAO -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>cadastrarDistribuicao</from-outcome>
+			<to-view-id>/telas/distribuicao/cadastrarDistribuicao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>listarRegistro</from-outcome>
+			<to-view-id>/telas/distribuicao/listarDistribuicao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>alterarDistribuicao</from-outcome>
+			<to-view-id>/telas/distribuicao/alterarDistribuicao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- NAVEGAÇÃO PARA REINGRESSO -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>cadastrarReingresso</from-outcome>
+			<to-view-id>/telas/reingresso/cadastrarReingresso.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>listarReingresso</from-outcome>
+			<to-view-id>/telas/reingresso/listarReingresso.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>alterarReingresso</from-outcome>
+			<to-view-id>/telas/reingresso/alterarReingresso.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	
+	<!--  GERAL DEVE-se Criar tela de erro e colocar aqui-->
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>erroCadastro</from-outcome>
+			<to-view-id>/telas/index.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	
+	<!-- CONFIGURAÇÃODO FACELETS -->
+	<application>
+		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+	</application>
+</faces-config>

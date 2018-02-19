@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="../../template/template.xhtml">
+	<ui:define name="titulo">SGBO - CADASTRO DE DISTRIBUIÇÃO</ui:define>
+	<ui:define name="conteudo">
+		<h:form id="cadastro">
+			<rich:tabPanel>
+				<rich:tab label="Cadastro">
+					<rich:panel>
+						<f:facet name="header">
+                    		Cadastro de Distribuição
+               			</f:facet>
+						<h:panelGrid columns="2">
+						
+							<h:outputText value="Registro:" />
+							<h:inputText value="" required="true" style=" width : 228px;"/>
+							
+							<h:outputText value="Médico:" />
+							<rich:comboBox selectFirstOnUpdate="true" defaultLabel="">
+<!--        						<f:selectItems value="" />-->
+    						</rich:comboBox>
+							
+							<h:outputText value="Estabelecimento:" />
+							<rich:comboBox selectFirstOnUpdate="true" defaultLabel="">
+<!--        						<f:selectItems value="" />-->
+    						</rich:comboBox>
+							
+							<h:outputText value="Data da Liberação:" />
+								<a4j:outputPanel id="dataLiberacao" layout="block">
+									<rich:calendar value=""
+										id="calendarioDataLiberacao" datePattern="dd/MM/yyyy" required="true" />
+								</a4j:outputPanel>
+							
+							<h:outputText value="Hora da Liberação:" />
+							<h:inputText value="" required="true" style=" width : 228px;"/>
+							
+							<h:outputText value="Data da Saída:" />
+								<a4j:outputPanel id="dataSaida" layout="block">
+									<rich:calendar value=""
+										id="calendarioDataSaida" datePattern="dd/MM/yyyy" required="true" />
+								</a4j:outputPanel>
+							
+							<h:outputText value="Hora da Saída:" />
+							<h:inputText value="" required="true" style=" width : 228px;"/>
+							
+							<h:outputText value="Nome do Receptor:" />
+							<h:inputText id="nome" value="#{distribuicaoBean.distribuicao.nomeReceptor}" required="true" style=" width : 228px;"/>
+
+							<h:outputText value="RGCT:" />
+							<h:inputText id="funcao" value="#{distribuicaoBean.distribuicao.rgct}" required="true" style=" width : 229px;"/>
+							
+							<h:outputText value="Sexo do Receptor:" />
+							<h:inputText value="" required="true" style=" width : 228px;"/>
+														
+							<h:outputText value="Nome do Portador:" />
+							<h:inputText id="login" value="#{distribuicaoBean.distribuicao.nomePortador}" required="true" />
+							
+							<h:outputText value="RG do Portador:" />
+							<h:inputText id="senha" value="#{distribuicaoBean.distribuicao.rgPortador}" required="true" />
+							
+							<h:outputText value="Vínculo do Portador:" />
+							<h:inputText value="" required="true" style=" width : 228px;"/>
+							
+							<h:outputText value="Motivo da Saída:" />
+							<h:inputText value="" required="true" style=" width : 228px;"/>
+							
+							
+							<h:commandButton action="#{distribuicaoBean.cadastrar}" value="Cadastrar" />
+						</h:panelGrid>
+					</rich:panel>
+				</rich:tab>
+			</rich:tabPanel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

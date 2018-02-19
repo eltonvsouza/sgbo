@@ -1,0 +1,5 @@
+package br.gov.pb.paraiba.dao;
+
+public class ReingressoDAOImpl<T> extends GenericDAOImpl<T> implements ReingressoDAO{
+
+}

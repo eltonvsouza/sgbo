@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/bean
+END
+RegistroBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/30/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/bean/RegistroBean.java
+END
+MedicoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/30/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/bean/MedicoBean.java
+END
+ReingressoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/24/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/bean/ReingressoBean.java
+END
+DistribuicaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/24/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/bean/DistribuicaoBean.java
+END
+CausaMorteBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/30/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/bean/CausaMorteBean.java
+END
+EstabelecimentoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/30/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/bean/EstabelecimentoBean.java
+END
+UsuarioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/30/trunk/sgbo/sgbo/src/main/java/br/gov/pb/paraiba/bean/UsuarioBean.java
+END

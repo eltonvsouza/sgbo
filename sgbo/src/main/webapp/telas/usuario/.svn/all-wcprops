@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/webapp/telas/usuario
+END
+listarUsuario.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/webapp/telas/usuario/listarUsuario.xhtml
+END
+cadastrarUsuario.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/14/trunk/sgbo/sgbo/src/main/webapp/telas/usuario/cadastrarUsuario.xhtml
+END
+alterarUsuario.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3/trunk/sgbo/sgbo/src/main/webapp/telas/usuario/alterarUsuario.xhtml
+END

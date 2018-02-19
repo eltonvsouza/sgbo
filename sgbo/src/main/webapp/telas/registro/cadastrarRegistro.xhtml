@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="../../template/template.xhtml">
+	<ui:define name="titulo">SGBO - REGISTRO DE CÓRNEA</ui:define>
+	<ui:define name="conteudo">
+		<h:form id="cadastro">
+			<rich:tabPanel>
+				<rich:tab label="Cadastro">
+					<rich:panel>
+						<f:facet name="header">
+                    		Cadastro de Registro
+               			</f:facet>
+						<h:panelGrid columns="2">
+							<h:outputText value="Mensagens de Validaçao: " />
+							<h:messages />
+							
+							
+							<h:outputText value="Número:" />
+							<h:inputText id="numero" value="#{registroBean.registro.numero}"  style=" width : 228px;"/>
+							
+							<h:outputText value="Nome do Doador:" />
+							<h:inputText id="nomeDoador" value="#{registroBean.registro.nomeDoador}"  style=" width : 228px;"/>
+							
+							<h:outputText value="Idade do Doador:" />
+							<h:inputText id="idadeDoador" value="#{registroBean.registro.idadeDoador}"  style=" width : 228px;"/>
+							
+							<h:outputText id="sexo" value="Sexo do Doador:" />
+							<h:selectOneRadio  >
+	                    		<f:selectItem itemLabel="MASCULINO" itemValue="'M'"/>
+	                    		<f:selectItem itemLabel="FEMININO" itemValue="'F'"/>
+			                </h:selectOneRadio> 
+
+							<h:outputText id="causaMorte" value="Causa da Morte do Doador:" />
+							<h:selectOneMenu  value="#{registroBean.registro.causaMorteDoador}" >
+								<f:selectItem itemLabel="Selecione..." itemValue=""/>
+        						<f:selectItems value="#{registroBean.causaMortes}" />
+    						</h:selectOneMenu>
+
+    						<h:outputText id="localObito" value="Local de Óbito do Doador:" />
+							<h:selectOneMenu  value="#{registroBean.registro.localObitoDoador}" >
+								<f:selectItem itemLabel="Selecione..." itemValue=""/>
+        						<f:selectItems value="#{registroBean.estabelecimentos}" />
+    						</h:selectOneMenu>
+							
+							<h:outputText value="Data de Óbito do Doador: " />
+								<a4j:outputPanel id="dataObito" layout="block">
+									<rich:calendar value="#{registroBean.registro.dataObito}"
+										id="calendarioDataObito" datePattern="dd/MM/yyyy" />
+								</a4j:outputPanel>
+							
+<!--							<h:outputText value="Hora do Óbito do Doador:" />-->
+<!--							<h:inputText id="horaObito" value="#{registroBean.horaObito}"  style=" width : 228px;"/>-->
+							
+							<h:outputText id="localCaptacao" value="Local da Captação:" />
+							<h:selectOneMenu selectFirstOnUpdate="true" value="#{registroBean.registro.localCaptacao}" >
+								<f:selectItem itemLabel="Selecione..." itemValue=""/>
+        						<f:selectItems value="#{registroBean.estabelecimentos}" />
+    						</h:selectOneMenu>
+							<h:outputText id="dataCaptacao" value="Data da Captação: " />
+								<a4j:outputPanel  layout="block">
+									<rich:calendar value="#{registroBean.registro.dataCaptacao}" 
+										id="calendarioDataCaptacao" datePattern="dd/MM/yyyy"  />
+								</a4j:outputPanel>
+							
+<!--							<h:outputText value="Hora da Captação:" />-->
+<!--							<h:inputText id="horaCaptacao" value="#{registroBean.horaCaptacao}"  style=" width : 228px;"/>-->
+							
+							<h:outputText id="dataEntrada" value="Data da Entrada: " />
+								<a4j:outputPanel  layout="block">
+									<rich:calendar value="#{registroBean.registro.dataEntreda}"
+										id="calendarioDataEntrada" datePattern="dd/MM/yyyy" />
+								</a4j:outputPanel>
+								
+<!--							<h:outputText value="Hora da Entrada:" />-->
+<!--							<h:inputText id="horaEntrada" value="#{registroBean.horaEntrada}"  style=" width : 228px;"/>	-->
+							
+							<h:outputText value="Sorologia:" />
+							<h:inputText id="sorologia" value="#{registroBean.registro.sorologia}"  style=" width : 228px;"/>
+							
+							<h:outputText id="preservacao" value="Preservação:" />
+                				<h:selectBooleanCheckbox value="#{registroBean.registro.preservada}">
+									<!-- <a4j:support event="onclick"  reRender="preserv"/>  -->
+                				</h:selectBooleanCheckbox>
+							
+							<h:outputText id="dataPreservacao" value="Data da Preservação: " />
+								<a4j:outputPanel  layout="block">
+									<rich:calendar value="#{registroBean.registro.dataPreservacao}"
+										id="calendarioDataPreservacao" datePattern="dd/MM/yyyy" reRender="preserv"  />
+								</a4j:outputPanel>
+								
+<!--							<h:outputText value="Hora da Preservação:"/>-->
+<!--							<h:inputText id="horaPreservacao" value="#{registroBean.dataPreservacao}" reRender="preserv" style=" width : 228px;"/>-->
+							
+							<h:outputText id="dataPreservacaoFinal" value="Data da Preservação Final: " />
+								<a4j:outputPanel layout="block">
+									<rich:calendar value="#{registroBean.registro.dataPreservacaoFinal}"
+										id="calendarioDataPreservacaoFinal" datePattern="dd/MM/yyyy" reRender="preserv"  />
+								</a4j:outputPanel>
+							
+<!--							<h:outputText value="Hora da Preservação Final:" />-->
+<!--							<h:inputText id="horaPreservacaoFinal" value="#{registroBean.horaPreservacaoFinal}" reRender="preserv" style=" width : 228px;"/>-->
+							
+							<h:outputText value="Resultado da Avaliação:" />
+							<h:inputText id="resultadoAvaliacao" value="#{registroBean.registro.resultadoAvaliacao}"   style=" width : 228px;"/>
+							
+							<h:outputText id="dataValidade" value="Data de Validade: " />
+								<a4j:outputPanel  layout="block">
+									<rich:calendar value="#{registroBean.registro.validade}"
+										id="calendarioDataValidade" datePattern="dd/MM/yyyy"  />
+								</a4j:outputPanel>
+							
+							<h:outputText value="AIH:" />
+               				<h:selectBooleanCheckbox id="aih" value="#{registroBean.registro.aih}">
+								<!-- <a4j:support event="onclick"  reRender="aih"/>  -->
+               				</h:selectBooleanCheckbox>
+							
+							<h:outputText value="Procedimento:" />
+							<h:inputText id="procedimento" value="#{registroBean.registro.procedimento}"   style=" width : 228px;"/>
+							
+							<h:commandButton action="#{registroBean.cadastrar}" value="Cadastrar" />
+						</h:panelGrid>
+					</rich:panel>
+				</rich:tab>
+			</rich:tabPanel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

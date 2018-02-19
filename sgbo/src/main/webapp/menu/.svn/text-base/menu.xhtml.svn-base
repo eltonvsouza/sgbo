@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<style>
+.pic {
+	margin-bottom: -4px;
+	margin-right: 2px;
+}
+</style>
+	<h:form>
+
+		<rich:toolBar>
+
+			<rich:dropDownMenu>
+				<f:facet name="label">
+					<h:panelGroup>
+						<h:graphicImage value="/images/icons/copy.gif" styleClass="pic" />
+						<h:outputText value="Manter" />
+					</h:panelGroup>
+				</f:facet>
+				
+				<rich:menuGroup value="Usuário">
+					<rich:menuItem submitMode="ajax" value="Cadastrar"
+						icon="/images/icons/save.gif"
+						action="#{usuarioBean.carregarCadastrar}" />
+					<rich:menuItem submitMode="ajax" value="Listar"
+						action="#{usuarioBean.carregarListar}" />
+				</rich:menuGroup>
+				
+				<rich:menuGroup value="Causa da Morte">
+					<rich:menuItem submitMode="ajax" value="Cadastrar"
+						icon="/images/icons/save.gif"
+						action="#{causaMorteBean.carregarCadastrar}" />
+					<rich:menuItem submitMode="ajax" value="Listar"
+						action="#{causaMorteBean.carregarListar}" />		
+				</rich:menuGroup>
+				
+				<rich:menuGroup value="Estabelecimento">
+					<rich:menuItem submitMode="ajax" value="Cadastrar"
+						icon="/images/icons/save.gif"
+						action="#{estabelecimentoBean.carregarCadastrar}" />
+					<rich:menuItem submitMode="ajax" value="Listar"
+						action="#{estabelecimentoBean.carregarListar}" />		
+				</rich:menuGroup>
+				
+				<rich:menuGroup value="Médico">
+					<rich:menuItem submitMode="ajax" value="Cadastrar"
+						icon="/images/icons/save.gif"
+						action="#{medicoBean.carregarCadastrar}" />
+					<rich:menuItem submitMode="ajax" value="Listar"
+						action="#{medicoBean.carregarListar}" />		
+				</rich:menuGroup>
+
+				<rich:menuGroup value="Registro">
+					<rich:menuItem submitMode="ajax" value="Cadastrar"
+						icon="/images/icons/save.gif"
+						action="#{registroBean.carregarCadastrar}" />
+					<rich:menuItem submitMode="ajax" value="Listar"
+						action="#{registroBean.carregarListar}" />		
+				</rich:menuGroup>
+
+				
+				<rich:menuSeparator id="menuSeparator11" />
+				<rich:menuItem submitMode="ajax" value="Sair" />
+			</rich:dropDownMenu>
+
+			<rich:dropDownMenu>
+				<rich:menuItem submitMode="none"
+					onclick="document.location.href='http://labs.jboss.com/jbossrichfaces/'">
+					<h:outputLink value="http://labs.jboss.com/jbossrichfaces/">
+						<h:outputText value="RichFaces Home Page"></h:outputText>
+					</h:outputLink>
+				</rich:menuItem>
+
+				<rich:menuItem submitMode="none"
+					onclick="document.location.href='http://jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=261'">
+					<h:outputLink
+						value="http://jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=261">
+						<h:outputText value="RichFaces Forum"></h:outputText>
+					</h:outputLink>
+				</rich:menuItem>
+			</rich:dropDownMenu>
+		</rich:toolBar>
+	</h:form>
+</ui:composition>

@@ -1,0 +1,12 @@
+package br.gov.pb.paraiba.dao;
+
+import java.util.List;
+
+
+public abstract interface GenericDAO<T> {
+	public abstract void salvar(T object);
+	public abstract List<T> listar();
+	public T carregar(Integer id);
+	public abstract void salvarOuAtualizar(T object);
+	public abstract void excluir(T object);
+}
